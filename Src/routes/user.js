@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 // Middle ware
 const { User } = require("../models/user");
 const { Authenticated } = require("../middleware/Autentification");
-const { Todo } = require("../models/todo");
 
 
 router.get('',async(req, res)=>{
@@ -74,6 +73,7 @@ router.delete("/:id", async (req, res) => {
     }
   });
 
+  // update user
   router.patch('/:id',(req, res)=>{
     const id = req.params._id;
     const {username } = req.body;
